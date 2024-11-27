@@ -5,7 +5,7 @@ import Topbar from "../../components/topbar";
 
 export default function HomePage(){
     return <>
-    <div>
+    <div className="sticky top-0 bg-white">
         <Topbar/>
     </div>
     <div className="flex bg-[#f4f2ee]">

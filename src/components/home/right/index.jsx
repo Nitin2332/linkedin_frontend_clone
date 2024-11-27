@@ -8,7 +8,9 @@ function RightCard() {
       {" "}
       <div>
       <TrendingCard />
+      <div className="sticky top-20">
       <PromotionsCard/>
+      </div>
       </div>
     </>
   );

@@ -13,7 +13,7 @@ function PostCard() {
           src={Me}
         />
         <input
-          className="pl-4 h-11 border-2 border-gray-400 rounded-full w-full my-3 ml-2"
+          className="hover:bg-gray-100 pl-4 h-11 border border-gray-400 rounded-full w-full my-3 ml-2"
           placeholder="Start a post, try writing with AI"
         ></input>
       </div>
