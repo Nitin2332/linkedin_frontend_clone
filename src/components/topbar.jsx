@@ -9,7 +9,25 @@ import me from "../assets/navbar_images/me.svg";
 import Premium from "../assets/navbar_images/premium.png";
 import Bussiness from "../assets/navbar_images/for bussiness.svg";
 
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 function Topbar() {
+  const navigate = useNavigate();
+
+  const handleClick1 = () => {
+    navigate("/home");
+  };
+
+
+  const handleClick2 = () => {
+    navigate("/network");
+  };
+
+  const handleClick3 = () => {
+    navigate("/jobs");
+  };
+
   return (
     <>
       <div className="px-40 border-b border-[#e8e8e8] ">
@@ -22,16 +40,16 @@ function Topbar() {
             </div>
           </div>
           <div className="flex justify-between w-2/3 px-10">
-            <button>
+            <button onClick={handleClick1}>
               <img className="ml-2" src={homeImage} />
               <div className="text-sm">Home</div>
             </button>
             
-            <button>
+            <button onClick={handleClick2}>
               <img className="ml-8" src={myNetworkLogo} />
               <div className="text-sm">My Network</div>
               </button>
-              <button>
+              <button onClick={handleClick3}>
               <img className="ml-1" src={jobsLogo} />
               <div className="text-sm">Jobs</div>
               </button>
