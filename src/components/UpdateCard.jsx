@@ -16,154 +16,100 @@ import Love from "../assets/home_images/love.svg";
 import Idea from "../assets/home_images/light-bulb.svg";
 import Funny from "../assets/home_images/lauging.svg";
 
-
 function UpdateCard() {
+  const cards = [
+    {
+      logo: AppleLogo,
+      title: "Apple",
+      subtitle: "Promoted",
+      description:
+        "Blazing-fast performance on the new MacBook Pro. Supercharged by M4",
+      poster: ApplePoster,
+      footerText: "Switch to Mac. power up.",
+      buttonText: "Learn more",
+    },
+    {
+      logo: IITlogo,
+      title: "IIT Roorkee - Applied Finance, Credit & Crime Risk Management",
+      subtitle: "Promoted",
+      description: "A new era of excellence.",
+      poster: IITposter,
+      footerText:
+        "IIT Roorkee - Applied Finance, Credit & Crime Risk Management Program",
+      buttonText: "Apply",
+    },
+    {
+      logo: DBlogo,
+      title: "MongoDB",
+      subtitle: "Promoted",
+      description: "How to Get Started with MongoDB.",
+      poster: MongoDBposter,
+      footerText: "How to Get Started with MongoDB.",
+      buttonText: "Learn more",
+    },
+  ];
+
   return (
     <div>
       <div className="flex">
-      <hr className="h-px w-4/5 my-4 ml-6 border-1 border-gray-400"></hr>
-      <div className="ml-2 mt-2 text-xs text-gray-700">Sort by: </div>
-      <div className="mt-2 text-xs font-semibold ml-1">Top ▼</div>
-      </div>
-      <div className="h-max w-max rounded-lg border shadow-sm ml-6  bg-white col-span-4">
-        <div className="flex">
-          <div>
-            <img className="ml-5 mt-4" src={AppleLogo} />
-          </div>
-          <div>
-            <div className="ml-3 mt-4 mr-96 font-semibold">Apple</div>
-            <div className="ml-3 text-xs text-gray-500">Promoted</div>
-          </div>
-        </div>
-        <div className="ml-4 mr-24 mt-2 text-sm">
-          Blazing-fast performance on the new MacBook Pro. Supercharged by M4
-        </div>
-        <img className="mt-2" height={565} width={565} src={ApplePoster} />
-        <div className="flex">
-          <div className="my-2 ml-3 text-sm font-semibold">
-            Switch to Mac. power up.
-          </div>
-          <button className="bg-transparent h-6 text-sm font-semibold text-blue-700 mt-2 ml-72 px-3 border border-blue-700 rounded-full">
-            Learn more
-          </button>
-        </div>
-        <hr className="h-px my-3 bg-gray-200 border-0"></hr>
-        <div className="flex px-4 py-1 pb-4">
-          <button className="flex pl-6 group relative">
-          <img className="h-6" src={Like} />
-          <div className="ml-1.5 font-semibold text-sm">Like</div>
-          <div className="absolute hidden -mt-16 text-black group-hover:flex space-x-1">
-            <img className="h-12" src={Like2} />
-            <img className="h-12" src={Clapping} />
-            <img className="h-12" src={Support} />
-            <img className="h-12" src={Love} />
-            <img className="h-12" src={Idea} />
-            <img className="h-12" src={Funny} />
-          </div>
-          </button>
-          <button className="flex pl-16">
-          <img className="h-6" src={Comment} />
-          <div className="ml-1.5 font-semibold text-sm">Comment</div>
-          </button>
-          <button className="flex pl-16">
-          <img className="h-6" src={Repost} />
-          <div className="ml-1.5 font-semibold text-sm">Repost</div>
-          </button>
-          <button className="flex pl-16">
-          <img className="h-6" src={Send} />
-          <div className="ml-1.5 font-semibold text-sm">Send</div>
-          </button>
-        </div>
+        <hr className="h-px w-4/5 my-4 ml-6 border-1 border-gray-400"></hr>
+        <div className="ml-2 mt-2 text-xs text-gray-700">Sort by: </div>
+        <div className="mt-2 text-xs font-semibold ml-1">Top ▼</div>
       </div>
 
-      <div className="h-max w-max rounded-lg border shadow-sm ml-6 mt-2 bg-white">
-        <div className="flex">
-          <div>
-            <img className="ml-5 mt-5 h-9" src={IITlogo} />
-          </div>
-          <div>
-            <div className="ml-3 mt-4 font-semibold">
-              IIT Roorkee - Applied Finance, Credit & Crime Risk Management
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          className="h-max w-max rounded-lg border shadow-sm ml-6 bg-white"
+        >
+          <div className="flex">
+            <div>
+              <img className="ml-5 mt-4 h-9 w-9" src={card.logo} />
             </div>
-            <div className="ml-3 text-xs text-gray-500">Promoted</div>
+            <div>
+              <div className="ml-3 mt-4 font-semibold">{card.title}</div>
+              <div className="ml-3 text-xs text-gray-500">{card.subtitle}</div>
+            </div>
+          </div>
+          <div className="ml-4 mt-2 text-sm">{card.description}</div>
+          <img className="mt-2" height={565} width={565} src={card.poster} />
+          <div className="flex justify-between">
+            <div className="my-2 ml-3 text-sm font-semibold">
+              {card.footerText}
+            </div>
+            <button className="bg-transparent h-6 text-sm font-semibold text-blue-700 mt-2 ml-4 px-3 border border-blue-700 rounded-full mr-2">
+              {card.buttonText}
+            </button>
+          </div>
+          <hr className="h-px my-3 bg-gray-200 border-0"></hr>
+          <div className="flex px-4 py-1 pb-4">
+            <button className="flex pl-6 group relative">
+              <img className="h-6" src={Like} alt="like" />
+              <div className="ml-1.5 font-semibold text-sm">Like</div>
+              <div className="absolute hidden -mt-16 text-black group-hover:flex space-x-1">
+                <img className="h-12" src={Like2} alt="reaction like" />
+                <img className="h-12" src={Clapping} alt="reaction clap" />
+                <img className="h-12" src={Support} alt="reaction support" />
+                <img className="h-12" src={Love} alt="reaction love" />
+                <img className="h-12" src={Idea} alt="reaction idea" />
+                <img className="h-12" src={Funny} alt="reaction funny" />
+              </div>
+            </button>
+            <button className="flex pl-16">
+              <img className="h-6" src={Comment} alt="comment" />
+              <div className="ml-1.5 font-semibold text-sm">Comment</div>
+            </button>
+            <button className="flex pl-16">
+              <img className="h-6" src={Repost} alt="repost" />
+              <div className="ml-1.5 font-semibold text-sm">Repost</div>
+            </button>
+            <button className="flex pl-16">
+              <img className="h-6" src={Send} alt="send" />
+              <div className="ml-1.5 font-semibold text-sm">Send</div>
+            </button>
           </div>
         </div>
-        <div className="ml-4 mt-2 text-sm">A new era of excellence.</div>
-        <img className="mt-2" height={565} width={565} src={IITposter} />
-        <div className="flex">
-          <div className="my-2 ml-3 text-sm font-semibold">
-            IIT Roorkee - Applied Finance, Credit & Crime Risk Management
-            Program
-          </div>
-
-          <button className="bg-transparent h-6 text-sm font-semibold text-blue-700 mt-2 ml-4 px-3 border border-blue-700 rounded-full">
-            Apply
-          </button>
-        </div>
-        <hr className="h-px my-3 bg-gray-200 border-0"></hr>
-        <div className="flex px-4 py-1 pb-4">
-          <button className="flex pl-6">
-          <img className="h-6" src={Like} />
-          <div className="ml-1.5 font-semibold text-sm">Like</div>
-          </button>
-          <button className="flex pl-16">
-          <img className="h-6" src={Comment} />
-          <div className="ml-1.5 font-semibold text-sm">Comment</div>
-          </button>
-          <button className="flex pl-16">
-          <img className="h-6" src={Repost} />
-          <div className="ml-1.5 font-semibold text-sm">Repost</div>
-          </button>
-          <button className="flex pl-16">
-          <img className="h-6" src={Send} />
-          <div className="ml-1.5 font-semibold text-sm">Send</div>
-          </button>
-        </div>
-      </div>
-
-      <div className="h-max w-max rounded-lg border shadow-sm ml-6 mt-2 bg-white">
-        <div className="flex">
-          <div>
-            <img className="ml-5 mt-4 h-9 w-9" src={DBlogo} />
-          </div>
-          <div>
-            <div className="ml-3 mt-4 font-semibold">MongoDB</div>
-            <div className="ml-3 text-xs text-gray-500">Promoted</div>
-          </div>
-        </div>
-        <div className="ml-4 mt-2 text-sm">
-          How to Get Started with MongoDB.
-        </div>
-        <img className="mt-2" height={565} width={565} src={MongoDBposter} />
-        <div className="flex">
-          <div className="my-2 ml-3 text-sm font-semibold">
-            How to Get Started with MongoDB.{" "}
-          </div>
-
-          <button className="bg-transparent h-6 text-sm font-semibold text-blue-700 mt-2 ml-56 px-3 border border-blue-700 rounded-full">
-            Learn more
-          </button>
-        </div>
-        <hr className="h-px my-3 bg-gray-200 border-0"></hr>
-        <div className="flex px-4 py-1 pb-4">
-          <button className="flex pl-6">
-          <img className="h-6" src={Like} />
-          <div className="ml-1.5 font-semibold text-sm">Like</div>
-          </button>
-          <button className="flex pl-16">
-          <img className="h-6" src={Comment} />
-          <div className="ml-1.5 font-semibold text-sm">Comment</div>
-          </button>
-          <button className="flex pl-16">
-          <img className="h-6" src={Repost} />
-          <div className="ml-1.5 font-semibold text-sm">Repost</div>
-          </button>
-          <button className="flex pl-16">
-          <img className="h-6" src={Send} />
-          <div className="ml-1.5 font-semibold text-sm">Send</div>
-          </button>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
