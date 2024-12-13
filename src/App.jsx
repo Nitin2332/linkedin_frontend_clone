@@ -1,26 +1,27 @@
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
 import HomePage from "./pages/homepage";
 import NetPage from "./pages/netPage";
 import JobsPage from "./pages/jobpage";
 import SignInPage from "./pages/signinpage";
+import MassagePage from "./pages/MassagePage";
+import StartPage from "./pages/startPage";
+import Premium from "./pages/premiumpage";
 
 function App() {
   return (
     <>
-    <BrowserRouter>
+      <BrowserRouter>
         <Routes>
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/network" element={<NetPage />} />
+          <Route path="/login" element={<SignInPage />} />
+          <Route path="/feed" element={<HomePage />} />
+          <Route path="/mynetwork" element={<NetPage />} />
           <Route path="/jobs" element={<JobsPage />} />
-          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/messaging" element={<MassagePage />} />
+          <Route path="/" element={<StartPage />} />
+          <Route path="/premium" element={<Premium/>} />
         </Routes>
       </BrowserRouter>
-    
     </>
   );
 }

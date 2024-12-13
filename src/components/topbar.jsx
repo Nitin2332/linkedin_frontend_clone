@@ -16,16 +16,25 @@ function Topbar() {
   const navigate = useNavigate();
 
   const handleClick1 = () => {
-    navigate("/home");
+    navigate("/feed");
   };
 
 
   const handleClick2 = () => {
-    navigate("/network");
+    navigate("/mynetwork");
   };
 
   const handleClick3 = () => {
     navigate("/jobs");
+  };
+
+  const handleClick4 = () => {
+    navigate("/messaging");
+  };
+
+
+  const handleClick5 = () => {
+    navigate("/premium");
   };
 
   return (
@@ -53,7 +62,7 @@ function Topbar() {
               <img className="ml-1" src={jobsLogo} />
               <div className="text-sm">Jobs</div>
               </button>
-            <button>
+            <button onClick={handleClick4}>
               <img className="ml-8" src={massageLogo} />
               <div className="text-sm">Messageing</div>
               </button>
@@ -69,7 +78,7 @@ function Topbar() {
               <img className="ml-8" src={Bussiness} />
               <div className="text-sm">For Bussiness</div>
               </button>
-            <button>
+            <button onClick={handleClick5}>
               <img className="ml-14 h-6" src={Premium} />
               <div className="text-sm">Try Premium for ₹0</div>
               </button>
